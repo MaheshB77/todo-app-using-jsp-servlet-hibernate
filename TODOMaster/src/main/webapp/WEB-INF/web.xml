@@ -1,0 +1,57 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>SignUp</servlet-name>
+  	<display-name>SignUp</display-name>
+  	<description></description>
+  	<servlet-class>controllers.SignUp</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Login</servlet-name>
+  	<display-name>Login</display-name>
+  	<description></description>
+  	<servlet-class>controllers.Login</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>TODOController</servlet-name>
+  	<display-name>TODOController</display-name>
+  	<description></description>
+  	<servlet-class>controllers.TODOController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>TODOAction</servlet-name>
+  	<display-name>TODOAction</display-name>
+  	<description></description>
+  	<servlet-class>controllers.TODOAction</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>TODOEdit</servlet-name>
+  	<display-name>TODOEdit</display-name>
+  	<description></description>
+  	<servlet-class>controllers.TODOEdit</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SignUp</servlet-name>
+  	<url-pattern>/SignUp</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Login</servlet-name>
+  	<url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TODOController</servlet-name>
+  	<url-pattern>/TODOController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TODOAction</servlet-name>
+  	<url-pattern>/TODOAction</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TODOEdit</servlet-name>
+  	<url-pattern>/TODOEdit</url-pattern>
+  </servlet-mapping>
+</web-app>
