@@ -31,7 +31,17 @@ public class SignUp extends HttpServlet {
 		String userEmail=request.getParameter("userEmail");
 		String userBirthDate=request.getParameter("userBirthDate");
 		String userPassword=request.getParameter("userPassword");
+		String userPassword2=request.getParameter("userPassword2");
+		
 
+//		Confirm Password
+		if(!userPassword.equals(userPassword2))
+		{
+			httpSession.setAttribute("message", "Both Passwords does not matched!!");
+			response.sendRedirect("signup.jsp");
+			return;
+		}
+		
 //		Validation of user
 		validation=doValidation(userEmail, userPassword);
 		

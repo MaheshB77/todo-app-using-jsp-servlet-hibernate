@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Welcome to TODO Master</title>
 
 <%@include file="components/common.jsp"%>
 </head>

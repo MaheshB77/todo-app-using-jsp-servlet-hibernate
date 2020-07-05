@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,6 +42,11 @@
 									type="password" class="form-control" id="userPassword"
 									name="userPassword" required>
 							</div>
+							<div class="form-group">
+								<label for="userPassword2">Confirm Password</label> <input
+									type="password" class="form-control" id="userPassword2"
+									name="userPassword2" required>
+							</div>
 
 							<div class="container">
 								<div class="row">
@@ -58,9 +63,8 @@
 									class="mt-2 alert alert-warning alert-dismissible fade show"
 									role="alert" style="font-size: 15px">
 									${sessionScope.message }
-									<%
-										session.removeAttribute("message");
-									%>
+
+									<c:remove var="message" scope="session" />
 									<button type="button" class="close" data-dismiss="alert"
 										aria-label="Close">
 										<span aria-hidden="true">&times;</span>
