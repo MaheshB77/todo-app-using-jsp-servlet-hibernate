@@ -11,55 +11,65 @@
 <body>
 	<%@include file="components/navbar.jsp"%>
 
-	<div class="container mt-5">
 
-		<c:if test="${user.todos.isEmpty()==false}">
-			<div class="row">
-				<div class="col-md-8 offset-md-2">
-					<table class="table table-dark table-bordered text-center">
-						<thead class="thead-dark">
-							<tr>
-								<th scope="col">TODO Name</th>
-								<th scope="col">Target Date</th>
-								<th scope="col">Actions</th>
-							</tr>
-						</thead>
+	<!-- 		User Validation on showtodos.jsp -->
+	<c:if test="${user==null}">
+		<div class="container text-center text-white mt-5">
+			<h1>You can not access this page!! Please Login or do registration</h1>
+		</div>
+	</c:if>
+	<!-- 		End of Validation -->
 
-						<tbody>
-							<c:forEach items="${user.todos }" var="todo">
+	<c:if test="${user!=null}">
+		<div class="container mt-5">
+
+			<c:if test="${user.todos.isEmpty()==false}">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<table class="table table-dark table-bordered text-center">
+							<thead class="thead-dark">
 								<tr>
-									<td>${todo.todoName }</td>
-									<td>${todo.todoTargetDate }</td>
-									
-<!-- 									Edit or Delete TODO -->
-									<td><a
-										href="TODOAction?action=edit&todoId=${todo.getTodoId()}">
-											<button type="button" class="btn btn-primary">Edit</button>
-									</a> <a href="TODOAction?action=delete&todoId=${todo.getTodoId()}">
-											<button type="button" class="btn btn-danger">Delete</button>
-									</a></td>
+									<th scope="col">TODO Name</th>
+									<th scope="col">Target Date</th>
+									<th scope="col">Actions</th>
 								</tr>
+							</thead>
 
-							</c:forEach>
+							<tbody>
+								<c:forEach items="${user.todos }" var="todo">
+									<tr>
+										<td>${todo.todoName }</td>
+										<td>${todo.todoTargetDate }</td>
 
-						</tbody>
+										<!-- 									Edit or Delete TODO -->
+										<td><a
+											href="TODOAction?action=edit&todoId=${todo.getTodoId()}">
+												<button type="button" class="btn btn-primary">Edit</button>
+										</a> <a href="TODOAction?action=delete&todoId=${todo.getTodoId()}">
+												<button type="button" class="btn btn-danger">Delete</button>
+										</a></td>
+									</tr>
 
-					</table>
+								</c:forEach>
+
+							</tbody>
+
+						</table>
+
+					</div>
+				</div>
+			</c:if>
+			<div class="row">
+
+				<div class="col-md-4 offset-md-4 text-center">
+					<button type="button" class="btn btn-success" data-toggle="modal"
+						data-target="#addTodo">Add new TODO</button>
 
 				</div>
 			</div>
-		</c:if>
-		<div class="row">
 
-			<div class="col-md-4 offset-md-4 text-center">
-				<button type="button" class="btn btn-success" data-toggle="modal"
-					data-target="#addTodo">Add new TODO</button>
-
-			</div>
+			<%@include file="components/addtodo.jsp"%>
 		</div>
-
-		<%@include file="components/addtodo.jsp"%>
-	</div>
-
+	</c:if>
 </body>
 </html>
